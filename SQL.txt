@@ -1,0 +1,9 @@
+MySQL:
+1. SELECT Fio FROM Managers WHERE Phone IS NOT NULL;
+2. SELECT COUNT(*) FROM Sells WHERE Date = '2021-06-20';
+3. SELECT AVG(Sum) FROM Sells JOIN Products ON Sells.ID_Prod = Products.ID WHERE Products.Name = 'Фанера';
+4. SELECT Managers.Fio, SUM(Sells.Sum) FROM Managers JOIN Sells ON Managers.ID = Sells.ID_Manag JOIN Products ON Sells.ID_Prod = Products.ID WHERE Products.Name = 'ОСБ' GROUP BY Managers.ID;
+5. SELECT Managers.Fio, Products.Name FROM Sells JOIN Managers ON Sells.ID_Manag = Managers.ID JOIN Products ON Sells.ID_Prod = Products.ID WHERE Sells.Date = '2021-08-22';
+6. SELECT * FROM Products WHERE Name LIKE '%Фанера%' AND Cost >= 1750;
+7. SELECT DATE_FORMAT(Sells.Date, '%Y-%m') AS Month, Products.Name, COUNT(*) AS Number_of_Sells FROM Sells JOIN Products ON Sells.ID_Prod = Products.ID GROUP BY Month, Products.Name;
+8. SELECT Name, COUNT(*) AS Count FROM Products GROUP BY Name HAVING Count > 1;
